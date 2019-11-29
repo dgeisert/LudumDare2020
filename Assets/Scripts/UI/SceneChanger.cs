@@ -22,7 +22,6 @@ public class SceneChanger : MonoBehaviour
     public void Start()
     {
         Instance = this;
-        DontDestroyOnLoad(gameObject);
         loadScene(Scenes.MainMenu);
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
