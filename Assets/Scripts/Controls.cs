@@ -21,4 +21,22 @@ public class Controls : MonoBehaviour
             return Input.GetKeyDown(KeyCode.P);
         }
     }
+
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            RaycastHit hit;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out hit, 500.0f))
+            {
+                Debug.Log(hit.transform.name);
+                Building b = hit.transform.GetComponentInParent<Building>();
+                if (b != null)
+                {
+                    Game.Instance.Select(b);
+                }
+            }
+        }
+    }
 }
