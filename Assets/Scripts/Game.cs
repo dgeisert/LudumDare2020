@@ -11,8 +11,9 @@ public class Game : MonoBehaviour
     public bool active = true;
     public Transform buildingPositions;
     public Building[, ] buildings;
-    public Building currentSelection;
-    public Transform selectionRing;
+    public Vector2Int currentSelection;
+    public Building clickBuilding;
+    public static bool started = false;
 
     public static float Score
     {
@@ -49,6 +50,17 @@ public class Game : MonoBehaviour
             {
                 Instance.health = value;
                 Instance.inGameUI.UpdateHealth(value);
+                if (value > 0)
+                {
+                    started = true;
+                }
+                if (value == 0 & started)
+                {
+                    started = false;
+                    Instance.inGameUI.EndGame(true);
+                    Instance.scoreScreen.EndGame(true);
+                    Instance.pauseMenu.gameObject.SetActive(false);
+                }
             }
         }
     }
@@ -90,6 +102,30 @@ public class Game : MonoBehaviour
             buildings[pos.x, pos.y] = b;
             b.Init(pos);
         }
+        for (int i = 0; i < 10; i++)
+        {
+            Building b = buildings[Mathf.FloorToInt(Random.value * grid), Mathf.FloorToInt(Random.value * grid)];
+            if (b != null)
+            {
+                ChangeBuilding(b, b.waterBuilding);
+            }
+            if (i < 2)
+            {
+                Building b1 = buildings[Mathf.FloorToInt(Random.value * grid), Mathf.FloorToInt(Random.value * grid)];
+                if (b1 != null)
+                {
+                    ChangeBuilding(b1, b1.mountainBuilding);
+                }
+                Building b2 = buildings[Mathf.FloorToInt(Random.value * grid), Mathf.FloorToInt(Random.value * grid)];
+                if (b2 != null)
+                {
+                    ChangeBuilding(b2, b2.cloudBuilding);
+                }
+            }
+        }
+        Health = 0;
+        Money = 10;
+        Score = 0;
     }
 
     public List<Building> GetNeighbors(Building b)
@@ -117,20 +153,27 @@ public class Game : MonoBehaviour
 
     public void Select(Building building)
     {
-        selectionRing.position = building.transform.position + Vector3.up * 0.2f;
-        currentSelection = building;
-        inGameUI.Populate(building);
+        if (Money >= clickBuilding.cost)
+        {
+            currentSelection = building.pos;
+            ChangeBuilding(building, clickBuilding);
+            Money = money - clickBuilding.cost;
+        }
+    }
+
+    public void ChangeBuilding(Building oldBuilding, Building newBuilding)
+    {
+        Building newInstance = Instantiate(newBuilding, oldBuilding.transform.position, Quaternion.identity, buildingPositions);
+        buildings[oldBuilding.pos.x, oldBuilding.pos.y] = newInstance;
+        newInstance.Init(oldBuilding);
+        Destroy(oldBuilding.gameObject);
     }
 
     public void ChangeBuilding(Building newBuilding)
     {
         if (currentSelection != null)
         {
-            Building old = currentSelection;
-            currentSelection = Instantiate(newBuilding, old.transform.position, Quaternion.identity);
-            buildings[old.pos.x, old.pos.y] = currentSelection;
-            currentSelection.Init(old.pos);
-            Destroy(old.gameObject);
+            ChangeBuilding(buildings[currentSelection.x, currentSelection.y], newBuilding);
         }
     }
 
@@ -139,34 +182,15 @@ public class Game : MonoBehaviour
     {
         if (active)
         {
-            if (Controls.Next)
-            {
-                Next();
-            }
             if (Controls.Pause)
             {
                 Pause();
             }
-            Score += Time.deltaTime * Random.value * 100;
         }
     }
 
     public void Pause()
     {
         pauseMenu.gameObject.SetActive(!pauseMenu.gameObject.activeSelf);
-    }
-
-    void Next()
-    {
-        if (step > 0)
-        {
-            step--;
-            if (step == 0)
-            {
-                inGameUI.EndGame(true);
-                scoreScreen.EndGame(true);
-                pauseMenu.gameObject.SetActive(false);
-            }
-        }
     }
 }

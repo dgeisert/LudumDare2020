@@ -30,11 +30,13 @@ public class Controls : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit, 500.0f))
             {
-                Debug.Log(hit.transform.name);
                 Building b = hit.transform.GetComponentInParent<Building>();
                 if (b != null)
                 {
-                    Game.Instance.Select(b);
+                    if (Game.Instance)
+                    {
+                        Game.Instance.Select(b);
+                    }
                 }
             }
         }

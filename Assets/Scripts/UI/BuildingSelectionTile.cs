@@ -1,24 +1,39 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 public class BuildingSelectionTile : MonoBehaviour
 {
     public Building newBuilding;
-    public Image image;
-    public TextMeshProUGUI cost, growTime;
-    public void Init(Building newBuilding)
+    public Image outline, backing;
+    public TextMeshProUGUI cost;
+    public Color selectColor;
+    public List<BuildingSelectionTile> otherButtons;
+    public void Start()
     {
-        this.newBuilding = newBuilding;
-        cost.text = newBuilding.cost.ToString();
-        growTime.text = newBuilding.growTime.ToString();
-        image.sprite = newBuilding.icon;
+        cost.text = "$" + newBuilding.cost.ToString();
+        if(newBuilding.type == BuildingType.MONEY)
+        {
+            OnClick();
+        }
     }
 
     public void OnClick()
     {
-        Game.Instance.ChangeBuilding(newBuilding);
+        Game.Instance.clickBuilding = newBuilding;
+        foreach (BuildingSelectionTile bst in otherButtons)
+        {
+            bst.Deselect();
+        }
+        backing.color = selectColor;
+        outline.enabled = true;
+    }
+
+    public void Deselect()
+    {
+        outline.enabled = false;
+        backing.color = Color.white;
     }
 }
