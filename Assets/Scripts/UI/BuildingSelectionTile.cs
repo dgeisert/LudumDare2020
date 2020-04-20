@@ -7,13 +7,23 @@ using UnityEngine.UI;
 public class BuildingSelectionTile : MonoBehaviour
 {
     public Building newBuilding;
+    public int hotKey;
     public Image outline, backing;
-    public TextMeshProUGUI cost;
+    public TextMeshProUGUI cost, hotKeyTexts;
     public Color selectColor;
     public List<BuildingSelectionTile> otherButtons;
+
+    void Update()
+    {
+        if(Input.GetKeyDown(hotKey.ToString()))
+        {
+            OnClick();
+        }
+    }
     public void Start()
     {
         cost.text = "$" + newBuilding.cost.ToString();
+        hotKeyTexts.text = hotKey.ToString();
         if(newBuilding.type == BuildingType.MONEY)
         {
             OnClick();

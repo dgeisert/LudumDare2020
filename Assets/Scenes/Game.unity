@@ -20610,6 +20610,31 @@ PrefabInstance:
       propertyPath: otherButtons.Array.data[2]
       value: 
       objectReference: {fileID: 1130269871}
+    - target: {fileID: 7511003267217925619, guid: 9d1afb2f2802d4e8caf8780af94b44d6,
+        type: 3}
+      propertyPath: hotKey
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8866041164867213483, guid: 9d1afb2f2802d4e8caf8780af94b44d6,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8866041164867213483, guid: 9d1afb2f2802d4e8caf8780af94b44d6,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8866041164867213483, guid: 9d1afb2f2802d4e8caf8780af94b44d6,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8866041164867213483, guid: 9d1afb2f2802d4e8caf8780af94b44d6,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d1afb2f2802d4e8caf8780af94b44d6, type: 3}
 --- !u!224 &986008153 stripped
@@ -22768,6 +22793,31 @@ PrefabInstance:
       propertyPath: otherButtons.Array.data[2]
       value: 
       objectReference: {fileID: 986008154}
+    - target: {fileID: 7511003267217925619, guid: 9d1afb2f2802d4e8caf8780af94b44d6,
+        type: 3}
+      propertyPath: hotKey
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8866041164867213483, guid: 9d1afb2f2802d4e8caf8780af94b44d6,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8866041164867213483, guid: 9d1afb2f2802d4e8caf8780af94b44d6,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8866041164867213483, guid: 9d1afb2f2802d4e8caf8780af94b44d6,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8866041164867213483, guid: 9d1afb2f2802d4e8caf8780af94b44d6,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d1afb2f2802d4e8caf8780af94b44d6, type: 3}
 --- !u!224 &1130269870 stripped
@@ -26992,6 +27042,31 @@ PrefabInstance:
       propertyPath: otherButtons.Array.data[2]
       value: 
       objectReference: {fileID: 986008154}
+    - target: {fileID: 7511003267217925619, guid: 9d1afb2f2802d4e8caf8780af94b44d6,
+        type: 3}
+      propertyPath: hotKey
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8866041164867213483, guid: 9d1afb2f2802d4e8caf8780af94b44d6,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8866041164867213483, guid: 9d1afb2f2802d4e8caf8780af94b44d6,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8866041164867213483, guid: 9d1afb2f2802d4e8caf8780af94b44d6,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8866041164867213483, guid: 9d1afb2f2802d4e8caf8780af94b44d6,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d1afb2f2802d4e8caf8780af94b44d6, type: 3}
 --- !u!224 &1437765193 stripped
@@ -38143,6 +38218,31 @@ PrefabInstance:
       propertyPath: otherButtons.Array.data[2]
       value: 
       objectReference: {fileID: 986008154}
+    - target: {fileID: 7511003267217925619, guid: 9d1afb2f2802d4e8caf8780af94b44d6,
+        type: 3}
+      propertyPath: hotKey
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8866041164867213483, guid: 9d1afb2f2802d4e8caf8780af94b44d6,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8866041164867213483, guid: 9d1afb2f2802d4e8caf8780af94b44d6,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8866041164867213483, guid: 9d1afb2f2802d4e8caf8780af94b44d6,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8866041164867213483, guid: 9d1afb2f2802d4e8caf8780af94b44d6,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d1afb2f2802d4e8caf8780af94b44d6, type: 3}
 --- !u!114 &261686647517249420 stripped
