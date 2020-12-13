@@ -93,9 +93,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 1
   water: 0
-  waterConsumptionRate: 1.5
+  waterConsumptionRate: 0.75
   maxWater: 1
-  growTime: 20
+  growTime: 40
   minViableSize: 0.5
   startSize: 0.3
   rate: 2
